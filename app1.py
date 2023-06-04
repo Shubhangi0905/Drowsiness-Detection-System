@@ -8,7 +8,7 @@ import time
 from playsound import playsound
 from flask import Flask, render_template, Response
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 mixer.init()
 sound = mixer.Sound('alarm.mp3')
@@ -118,5 +118,5 @@ def test1():
 def end():
     return render_template("end.html")
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     app.run(debug=True)
